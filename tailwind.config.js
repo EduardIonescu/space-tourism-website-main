@@ -10,7 +10,13 @@ module.exports = {
 			barlowCondensed: ["Barlow Condensed, sans-serif"],
 			bellefair: ["Bellefair, sans"],
 		},
-		extend: {},
+		extend: {
+			colors: {
+				veryLightBlue: "#D0D6F9",
+				veryDarkBlue: "#0B0D17",
+				grayBlue: "#383B4B",
+			},
+		},
 	},
 	plugins: [],
 };
