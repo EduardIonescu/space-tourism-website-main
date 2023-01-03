@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:wght@400;700&family=Bellefair&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body{
+  min-height:100vh;
+  
+  
+  display: flex;
+  justify-content: center;
+}
+
+@media(min-width:1440px){
+  body{
+    background:url("../public/assets/home/background-home-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+  #__next{
+    width:1440px;
+    background: transparent;
+  }
+}
+
