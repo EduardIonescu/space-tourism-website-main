@@ -4,13 +4,15 @@ export default function TechnologyNav({
 	changeTechnologyId,
 }) {
 	return (
-		<nav className="flex flex-col xl:gap-8">
+		<nav className="flex md:max-xl:mx-auto xl:flex-col gap-4 xl:gap-8">
 			{technologyData.map((technology, i) => (
 				<button
 					key={technology.name}
 					onClick={() => changeTechnologyId(i)}
-					className={`rounded-full xl:w-20 xl:h-20 font-bellefair tracking-[2px]
-          text-[32px] leading-[36px] border-[1px] border-white/25 transition
+					className={`rounded-full w-[60px] h-[60px] xl:w-20 xl:h-20 
+					font-bellefair text-[24px] leading-[28px] tracking-[1.5px]
+					xl:text-[32px] xl:tracking-[2px] xl:leading-[36px]
+					border-[1px] border-white/25 transition
           duration-300 ease-linear hover:border-white pl-1
           ${
 				i == selectedTechnologyId

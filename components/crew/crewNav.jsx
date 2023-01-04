@@ -1,12 +1,15 @@
 export default function CrewNav({ crewData, selectedCrewId, changeCrewId }) {
 	console.log(selectedCrewId);
 	return (
-		<nav className="flex xl:gap-6 absolute bottom-0">
+		<nav
+			className="inline-flex md:mt-10 xl:mt-0
+		 gap-4 xl:flex xl:gap-6 xl:absolute xl:bottom-0"
+		>
 			{crewData.map((crewMember, i) => (
 				<button
 					key={crewMember.name}
 					onClick={() => changeCrewId(i)}
-					className={`bg-white w-4 h-4 rounded-full ${
+					className={`bg-white w-[10px] h-[10px] z-10 xl:w-4 xl:h-4 rounded-full ${
 						i != selectedCrewId &&
 						"opacity-[17%] hover:opacity-50 transition duration-300 ease-linear"
 					}`}

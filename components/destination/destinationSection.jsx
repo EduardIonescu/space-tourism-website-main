@@ -11,36 +11,39 @@ export default function DestinationSection({ destinationData }) {
 	}
 
 	return (
-		<section className="flex items-end xl:mt-16 gap-40">
+		<section
+			className="flex flex-col xl:flex-row items-center xl:items-end md:mt-[60px]
+		xl:mt-16 md:gap-14 xl:gap-40"
+		>
 			<aside>
 				<Image
-					className="xl:w-[445px] h-auto"
+					className="md:w-[300px] xl:w-[445px] h-auto"
 					src={planetURL}
 					width={170}
 					height={170}
 					alt="moon image"
 				/>
 			</aside>
-			<section className="xl:w-[445px]">
+			<section className="md:w-[575px] md:max-xl:text-center xl:w-[445px]">
 				<DestinationNav
 					destinationData={destinationData}
 					selectedDestinationId={selectedDestinationId}
 					changeDestionationId={changeDestionationId}
 				/>
 				<h2
-					className="font-bellefair text-[100px] text-white font-normal
-    uppercase xl:mt-8"
+					className="font-bellefair text-[5rem] xl:text-[100px] text-white 
+				font-normal uppercase md:mt-8 md:max-xl:leading-[92px] md:max-xl:mb-2"
 				>
 					{selectedDestination.name}
 				</h2>
 				<p
-					className="text-veryLightBlue font-barlow text-[18px]
-     leading-[32px]"
+					className="text-veryLightBlue font-barlow xl:text-[18px] leading-[28px]
+     xl:leading-[32px]"
 				>
 					{selectedDestination.description}
 				</p>
-				<hr className="w-full h-[1px] border-grayBlue xl:mt-12 xl:mb-7" />
-				<div className="flex xl:gap-20">
+				<hr className="w-full h-[1px] border-grayBlue md:mt-12 md:mb-7" />
+				<div className="flex justify-center xl:justify-start md:gap-24 xl:gap-20">
 					<div>
 						<p
 							className="text-[14px] font-barlowCondensed tracking-[2.35px]
@@ -50,7 +53,7 @@ export default function DestinationSection({ destinationData }) {
 						</p>
 						<p
 							className="text-white text-[28px] leading-[32px] uppercase
-        font-bellefair xl:mt-3"
+        font-bellefair md:mt-3"
 						>
 							{selectedDestination.distance}
 						</p>
@@ -64,7 +67,7 @@ export default function DestinationSection({ destinationData }) {
 						</p>
 						<p
 							className="text-white text-[28px] leading-[32px] uppercase
-        font-bellefair xl:mt-3"
+        font-bellefair md:mt-3"
 						>
 							{selectedDestination.travel}
 						</p>

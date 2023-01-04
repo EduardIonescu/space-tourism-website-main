@@ -7,7 +7,7 @@ export default function DestinationNav({
 		return index == selectedDestinationId;
 	}
 	return (
-		<nav className="flex gap-9">
+		<nav className="flex justify-center xl:justify-start gap-9 md:max-xl:pb-2">
 			{destinationData.map((destinationButton, i) => (
 				<button
 					key={destinationButton.name}

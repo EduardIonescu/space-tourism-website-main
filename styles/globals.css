@@ -4,8 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -20,17 +18,22 @@ body {
 
 body{
   min-height:100vh;
-  
-  
   display: flex;
   justify-content: center;
 }
 
+#__next{
+  position: relative;
+  background: transparent;
+}
+@media(min-width:768px){
+  #__next{
+    width:100vw;
+  }
+}
 @media(min-width:1440px){
 
   #__next{
     width:1440px;
-    position: relative;
-    background: transparent;
   }
 }
