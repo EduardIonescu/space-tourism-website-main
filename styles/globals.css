@@ -27,11 +27,7 @@ body{
 }
 
 @media(min-width:1440px){
-  body{
-    background:url("../public/assets/home/background-home-desktop.jpg");
-    background-repeat: no-repeat;
-    background-size:cover;
-  }
+
   #__next{
     width:1440px;
     background: transparent;

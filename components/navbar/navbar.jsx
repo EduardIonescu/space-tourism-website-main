@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const links = [
 	{
@@ -24,8 +23,7 @@ const links = [
 		text: "TECHNOLOGY",
 	},
 ];
-export default function Navbar() {
-	const router = useRouter();
+export default function Navbar({ router }) {
 	return (
 		<header className="xl:mt-10 w-full ">
 			<nav className="xl:pl-14 flex justify-between items-center relative">
@@ -46,7 +44,7 @@ export default function Navbar() {
         "
 				>
 					{links.map((link) => (
-						<li>
+						<li key={link.text}>
 							<Link
 								className={`font-barlowCondensed tracking-[2.7px] relative
               before:content-[''] before:absolute before:block before:w-full
