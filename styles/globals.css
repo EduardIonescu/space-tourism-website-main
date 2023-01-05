@@ -23,14 +23,11 @@ body{
 }
 
 #__next{
+  width:100vw;
   position: relative;
   background: transparent;
 }
-@media(min-width:768px){
-  #__next{
-    width:100vw;
-  }
-}
+
 @media(min-width:1440px){
 
   #__next{

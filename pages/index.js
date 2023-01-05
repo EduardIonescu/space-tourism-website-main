@@ -12,25 +12,29 @@ export default function Home() {
 				/>
 			</Head>
 			<main
-				className="flex items-center xl:items-end md:mt-[106px] md:gap-40
-				md:max-xl:flex-col md:max-xl:justify-center xl:ml-40 xl:mt-64 xl:gap-96"
+				className="flex items-center gap-20 mt-6 xl:items-end md:mt-[106px] 
+				md:gap-40 flex-col xl:flex-row justify-center xl:justify-start 
+				xl:ml-40 xl:mt-64 xl:gap-96"
 			>
-				<section className="md:w-[450px] text-center">
+				<section className="w-[325px] md:w-[450px] text-center">
 					<p
 						className="font-barlowCondensed text-veryLightBlue
+					tracking-[2.7px] leading-[19px]
 					md:text-[20px] md:tracking-[3.4px] md:max-xl:leading-[24px]
 					xl:text-[28px] xl:tracking-[4.75px]"
 					>
 						SO, YOU WANT TO TRAVEL TO
 					</p>
 					<h1
-						className="text-white font-normal font-bellefair md:text-[150px]
-					md:max-xl:leading-[150px] uppercase md:max-xl:my-6"
+						className="text-white font-normal font-bellefair text-[80px]
+						max-md:leading-[100px] my-4 md:my-6 xl:my-0
+						 md:text-[150px] md:max-xl:leading-[150px] uppercase "
 					>
 						space
 					</h1>
 					<p
-						className="text-veryLightBlue font-barlow md:text-base
+						className="text-veryLightBlue font-barlow text-[15px] 
+						max-md:leading-[25px] md:text-base
 						md:max-xl:leading-[28px] xl:text-[18px]"
 					>
 						Let’s face it; if you want to go to space, you might as
@@ -42,7 +46,8 @@ export default function Home() {
 				<aside>
 					<button
 						className="font-bellefair text-veryDarkBlue 
-						md:text-[32px] tracking-[2px] md:w-60 md:h-60 xl:text-[2rem]
+						text-[20px] tracking-[1.25px] w-[150px] h-[150px]
+						md:text-[32px] md:tracking-[2px] md:w-60 md:h-60 xl:text-[2rem]
           xl:w-[17rem] xl:h-[17rem] bg-white uppercase rounded-full 
           shadow-[0px_0px_0px_0px_rgba(0,0,0,0)] transition duration-700 ease-linear
           hover:shadow-[0px_0px_0px_5.5rem_rgba(255,255,255,0.1)]"
