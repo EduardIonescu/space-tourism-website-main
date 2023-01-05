@@ -1,17 +1,38 @@
 import { useState } from "react";
 import Image from "next/image";
 import CrewNav from "./crewNav";
+import { useSwipeable } from "react-swipeable";
+import handleSwipeTemplate from "../../utils/handleSwipeTemplate";
+
 export default function CrewSection({ crewData }) {
 	const [selectedCrewId, setSelectedCrewId] = useState(0);
-	const selectedCrew = crewData[selectedCrewId];
+	let selectedCrew = crewData[selectedCrewId];
 	const crewURL = selectedCrew.images.png.slice(1);
+
+	function handleSwipe(direction) {
+		handleSwipeTemplate(
+			direction,
+			selectedCrewId,
+			setSelectedCrewId,
+			crewData
+		);
+	}
+
+	const handlers = useSwipeable({
+		onSwipedLeft: () => handleSwipe("left"),
+		onSwipedRight: () => handleSwipe("right"),
+		delta: 50,
+		swipeDuration: 1000,
+		preventScrollOnSwipe: true,
+		trackMouse: true,
+	});
 
 	function changeCrewId(index) {
 		setSelectedCrewId(index);
 	}
 	console.log(selectedCrew);
 	return (
-		<section className="flex flex-col md:block">
+		<section {...handlers} className="flex flex-col md:block">
 			<section
 				className="flex md:block flex-col items-center
 				order-2 md:mt-[52px] text-center xl:text-left

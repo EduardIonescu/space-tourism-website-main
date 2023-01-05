@@ -4,7 +4,7 @@ export default function TechnologyNav({
 	changeTechnologyId,
 }) {
 	return (
-		<nav className="flex max-xl:mx-auto xl:flex-col gap-4 xl:gap-8">
+		<nav className="flex max-xl:mx-auto xl:flex-col xl:justify-end gap-4 xl:gap-8">
 			{technologyData.map((technology, i) => (
 				<button
 					key={technology.name}

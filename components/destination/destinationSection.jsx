@@ -1,10 +1,31 @@
 import Image from "next/image";
 import DestinationNav from "./destinationNav";
 import { useState } from "react";
+import { useSwipeable } from "react-swipeable";
+import handleSwipeTemplate from "../../utils/handleSwipeTemplate";
+
 export default function DestinationSection({ destinationData }) {
 	const [selectedDestinationId, setSelectedDestinationId] = useState(0);
 	const selectedDestination = destinationData[selectedDestinationId];
 	const planetURL = selectedDestination.images.png.slice(1);
+
+	function handleSwipe(direction) {
+		handleSwipeTemplate(
+			direction,
+			selectedDestinationId,
+			setSelectedDestinationId,
+			destinationData
+		);
+	}
+
+	const handlers = useSwipeable({
+		onSwipedLeft: () => handleSwipe("left"),
+		onSwipedRight: () => handleSwipe("right"),
+		delta: 50,
+		swipeDuration: 1000,
+		preventScrollOnSwipe: true,
+		trackMouse: true,
+	});
 
 	function changeDestionationId(index) {
 		setSelectedDestinationId(index);
@@ -12,6 +33,7 @@ export default function DestinationSection({ destinationData }) {
 
 	return (
 		<section
+			{...handlers}
 			className="flex flex-col xl:flex-row items-center xl:items-end mt-8
 			 md:mt-[60px] xl:mt-16 gap-6 md:gap-14 xl:gap-40"
 		>

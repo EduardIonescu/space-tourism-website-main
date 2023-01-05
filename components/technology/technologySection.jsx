@@ -1,13 +1,32 @@
 import { useState } from "react";
 import Image from "next/image";
 import TechnologyNav from "./technologyNav";
+import { useSwipeable } from "react-swipeable";
+import handleSwipeTemplate from "../../utils/handleSwipeTemplate";
 
 export default function TechnologySection({ technologyData }) {
 	const [selectedTechnologyId, setSelectedTechnologyId] = useState(0);
 	const selectedTechnology = technologyData[selectedTechnologyId];
-	console.log(selectedTechnology);
 	const technologyURL = selectedTechnology.images.portrait.slice(1);
 	const technologyLandscapeURL = selectedTechnology.images.landscape.slice(1);
+
+	function handleSwipe(direction) {
+		handleSwipeTemplate(
+			direction,
+			selectedTechnologyId,
+			setSelectedTechnologyId,
+			technologyData
+		);
+	}
+
+	const handlers = useSwipeable({
+		onSwipedLeft: () => handleSwipe("left"),
+		onSwipedRight: () => handleSwipe("right"),
+		delta: 50,
+		swipeDuration: 1000,
+		preventScrollOnSwipe: true,
+		trackMouse: true,
+	});
 
 	function changeTechnologyId(index) {
 		setSelectedTechnologyId(index);
@@ -16,7 +35,7 @@ export default function TechnologySection({ technologyData }) {
 		<>
 			<aside className="xl:hidden">
 				<Image
-					className="w-full min-h-[170px] md:max-h-96 object-cover my-8 md:my-14"
+					className="w-full min-h-[170px] md:max-h-80 object-cover my-8 md:my-14"
 					src={technologyLandscapeURL}
 					alt={`Image of ${selectedTechnology.name}`}
 					height={375}
@@ -24,6 +43,7 @@ export default function TechnologySection({ technologyData }) {
 				/>
 			</aside>
 			<section
+				{...handlers}
 				className="flex flex-col text-center xl:text-left
 			 xl:flex-row xl:gap-20 xl:mt-32 mb-14 md:mb-0"
 			>
