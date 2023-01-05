@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import TechnologyNav from "./technologyNav";
 import { useSwipeable } from "react-swipeable";
-import handleSwipeTemplate from "../../utils/handleSwipeTemplate";
+import {
+	handleSwipeTemplate,
+	keyHandlerTemplate,
+} from "../../utils/controlFunctions";
 
 export default function TechnologySection({ technologyData }) {
 	const [selectedTechnologyId, setSelectedTechnologyId] = useState(0);
@@ -10,7 +13,26 @@ export default function TechnologySection({ technologyData }) {
 	const technologyURL = selectedTechnology.images.portrait.slice(1);
 	const technologyLandscapeURL = selectedTechnology.images.landscape.slice(1);
 
+	useEffect(() => {
+		// Key control
+		function nextHandler({ key }) {
+			keyHandlerTemplate(
+				key,
+				selectedTechnologyId,
+				setSelectedTechnologyId,
+				technologyData
+			);
+		}
+
+		window.addEventListener("keydown", nextHandler);
+
+		return () => {
+			window.removeEventListener("keydown", nextHandler);
+		};
+	}, [selectedTechnologyId]);
+
 	function handleSwipe(direction) {
+		// Swipe control
 		handleSwipeTemplate(
 			direction,
 			selectedTechnologyId,

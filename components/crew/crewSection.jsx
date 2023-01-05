@@ -1,15 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import CrewNav from "./crewNav";
 import { useSwipeable } from "react-swipeable";
-import handleSwipeTemplate from "../../utils/handleSwipeTemplate";
+import {
+	handleSwipeTemplate,
+	keyHandlerTemplate,
+} from "../../utils/controlFunctions";
 
 export default function CrewSection({ crewData }) {
 	const [selectedCrewId, setSelectedCrewId] = useState(0);
-	let selectedCrew = crewData[selectedCrewId];
+	const selectedCrew = crewData[selectedCrewId];
 	const crewURL = selectedCrew.images.png.slice(1);
 
+	useEffect(() => {
+		// Key control
+		function nextHandler({ key }) {
+			keyHandlerTemplate(
+				key,
+				selectedCrewId,
+				setSelectedCrewId,
+				crewData
+			);
+		}
+
+		window.addEventListener("keydown", nextHandler);
+
+		return () => {
+			window.removeEventListener("keydown", nextHandler);
+		};
+	}, [selectedCrewId]);
+
 	function handleSwipe(direction) {
+		// Swipe control
 		handleSwipeTemplate(
 			direction,
 			selectedCrewId,
@@ -30,7 +52,6 @@ export default function CrewSection({ crewData }) {
 	function changeCrewId(index) {
 		setSelectedCrewId(index);
 	}
-	console.log(selectedCrew);
 	return (
 		<section {...handlers} className="flex flex-col md:block">
 			<section

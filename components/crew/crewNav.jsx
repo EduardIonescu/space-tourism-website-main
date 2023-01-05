@@ -1,5 +1,4 @@
 export default function CrewNav({ crewData, selectedCrewId, changeCrewId }) {
-	console.log(selectedCrewId);
 	return (
 		<nav
 			className="inline-flex my-8 md:my-0 md:mt-10 xl:mt-0 -order-10

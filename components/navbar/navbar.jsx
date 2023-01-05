@@ -1,29 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
-import BurgerMenu, { Links } from "./burgerMenu";
+import BurgerMenu from "./burgerMenu";
+import Links from "./links";
 
-const links = [
-	{
-		address: "/",
-		index: "00",
-		text: "HOME",
-	},
-	{
-		address: "/destination",
-		index: "01",
-		text: "DESTINATION",
-	},
-	{
-		address: "/crew",
-		index: "02",
-		text: "CREW",
-	},
-	{
-		address: "/technology",
-		index: "03",
-		text: "TECHNOLOGY",
-	},
-];
 export default function Navbar({ router }) {
 	return (
 		<header className="xl:mt-10 w-full ">

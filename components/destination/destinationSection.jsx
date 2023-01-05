@@ -1,15 +1,37 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import DestinationNav from "./destinationNav";
-import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
-import handleSwipeTemplate from "../../utils/handleSwipeTemplate";
+import {
+	handleSwipeTemplate,
+	keyHandlerTemplate,
+} from "../../utils/controlFunctions";
 
 export default function DestinationSection({ destinationData }) {
 	const [selectedDestinationId, setSelectedDestinationId] = useState(0);
 	const selectedDestination = destinationData[selectedDestinationId];
 	const planetURL = selectedDestination.images.png.slice(1);
 
+	useEffect(() => {
+		// Key control
+		function nextHandler({ key }) {
+			keyHandlerTemplate(
+				key,
+				selectedDestinationId,
+				setSelectedDestinationId,
+				destinationData
+			);
+		}
+
+		window.addEventListener("keydown", nextHandler);
+
+		return () => {
+			window.removeEventListener("keydown", nextHandler);
+		};
+	}, [selectedDestinationId]);
+
 	function handleSwipe(direction) {
+		// Swipe control
 		handleSwipeTemplate(
 			direction,
 			selectedDestinationId,
