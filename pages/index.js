@@ -16,26 +16,26 @@ export default function Home() {
 				md:gap-40 flex-col xl:flex-row justify-center xl:justify-start 
 				xl:ml-40 xl:mt-64 xl:gap-96"
 			>
-				<section className="w-[325px] md:w-[450px] text-center">
+				<section className="w-[325px] md:w-[450px] text-center xl:text-start">
 					<p
 						className="font-barlowCondensed text-veryLightBlue
 					tracking-[2.7px] leading-[19px]
-					md:text-[20px] md:tracking-[3.4px] md:max-xl:leading-[24px]
-					xl:text-[28px] xl:tracking-[4.75px]"
+					md:text-[20px] md:tracking-[3.4px] md:leading-[24px]
+					xl:text-[28px] xl:tracking-[4.75px] xl:leading-[34px] "
 					>
 						SO, YOU WANT TO TRAVEL TO
 					</p>
 					<h1
 						className="text-white font-normal font-bellefair text-[80px]
-						max-md:leading-[100px] my-4 md:my-6 xl:my-0
-						 md:text-[150px] md:max-xl:leading-[150px] uppercase "
+						max-md:leading-[100px] my-4 md:my-6
+						 md:text-[150px] md:max-xl:leading-[150px] uppercase xl:leading-[172px]"
 					>
 						space
 					</h1>
 					<p
 						className="text-veryLightBlue font-barlow text-[15px] 
-						max-md:leading-[25px] md:text-base
-						md:max-xl:leading-[28px] xl:text-[18px]"
+						leading-[25px] md:text-base
+						md:leading-[28px] xl:text-[18px] xl:leading-[32px]"
 					>
 						Let’s face it; if you want to go to space, you might as
 						well genuinely go to outer space and not hover kind of

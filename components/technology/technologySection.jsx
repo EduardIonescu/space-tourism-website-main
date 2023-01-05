@@ -16,16 +16,16 @@ export default function TechnologySection({ technologyData }) {
 		<>
 			<aside className="xl:hidden">
 				<Image
-					className="w-full max-h-96 object-cover my-14"
+					className="w-full min-h-[170px] md:max-h-96 object-cover my-8 md:my-14"
 					src={technologyLandscapeURL}
 					alt={`Image of ${selectedTechnology.name}`}
-					height={768}
-					width={310}
+					height={375}
+					width={170}
 				/>
 			</aside>
 			<section
 				className="flex flex-col text-center xl:text-left
-			 xl:flex-row xl:gap-20 xl:mt-32"
+			 xl:flex-row xl:gap-20 xl:mt-32 mb-14 md:mb-0"
 			>
 				<TechnologyNav
 					technologyData={technologyData}
@@ -35,22 +35,24 @@ export default function TechnologySection({ technologyData }) {
 
 				<section>
 					<p
-						className="uppercase tracking-[2.7px] leading-[19px]
-        font-barlowCondensed text-veryLightBlue mt-10 mb-4 xl:mx-0"
+						className="uppercase text-[14px] tracking-[2.35px] leading-[17px]
+						md:text-base md:tracking-[2.7px] md:leading-[19px] mb-2
+        font-barlowCondensed text-veryLightBlue mt-7 md:mt-10 md:mb-4 xl:mx-0"
 					>
 						the terminology...
 					</p>
 					<h3
-						className="font-bellefair font-normal text-white text-[40px]
-						leading-[46px] 
+						className="font-bellefair font-normal text-white 
+						text-[24px] leading-[28px] md:text-[40px] md:leading-[46px] 
 						xl:text-[56px] xl:leading-[64px] uppercase xl:mt-3 mb-4"
 					>
 						{selectedTechnology.name}
 					</h3>
 					<p
-						className="text-veryLightBlue xl:text-[18px] font-barlow 
-						md:leading-[28px] xl:leading-[32px] md:max-xl:mx-auto
-        md:max-w-[445px]"
+						className="text-veryLightBlue text-[15px] md:text-base
+						xl:text-[18px] font-barlow max-w-[327px] md:max-w-[445px]
+					 leading-[25px]	md:leading-[28px] xl:leading-[32px] max-xl:mx-auto
+					"
 					>
 						{selectedTechnology.description}
 					</p>

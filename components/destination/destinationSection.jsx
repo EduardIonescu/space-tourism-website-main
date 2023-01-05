@@ -12,8 +12,8 @@ export default function DestinationSection({ destinationData }) {
 
 	return (
 		<section
-			className="flex flex-col xl:flex-row items-center xl:items-end md:mt-[60px]
-		xl:mt-16 md:gap-14 xl:gap-40"
+			className="flex flex-col xl:flex-row items-center xl:items-end mt-8
+			 md:mt-[60px] xl:mt-16 gap-6 md:gap-14 xl:gap-40"
 		>
 			<aside>
 				<Image
@@ -24,26 +24,34 @@ export default function DestinationSection({ destinationData }) {
 					alt="moon image"
 				/>
 			</aside>
-			<section className="md:w-[575px] md:max-xl:text-center xl:w-[445px]">
+			<section className="md:w-[575px] text-center xl:text-left xl:w-[445px]">
 				<DestinationNav
 					destinationData={destinationData}
 					selectedDestinationId={selectedDestinationId}
 					changeDestionationId={changeDestionationId}
 				/>
 				<h2
-					className="font-bellefair text-[5rem] xl:text-[100px] text-white 
+					className="font-bellefair text-[56px] md:text-[5rem] xl:text-[100px]
+				text-white max-md:leading-[4rem] mt-7
 				font-normal uppercase md:mt-8 md:max-xl:leading-[92px] md:max-xl:mb-2"
 				>
 					{selectedDestination.name}
 				</h2>
 				<p
-					className="text-veryLightBlue font-barlow xl:text-[18px] leading-[28px]
-     xl:leading-[32px]"
+					className="text-veryLightBlue font-barlow text-[15px] md:text-base
+					xl:text-[18px] leading-[25px] md:leading-[28px] xl:leading-[32px]
+					w-[325px] md:w-auto"
 				>
 					{selectedDestination.description}
 				</p>
-				<hr className="w-full h-[1px] border-grayBlue md:mt-12 md:mb-7" />
-				<div className="flex justify-center xl:justify-start md:gap-24 xl:gap-20">
+				<hr
+					className="w-full h-[1px] border-grayBlue my-8
+				md:mt-12 md:mb-7"
+				/>
+				<div
+					className="flex md:justify-center flex-col md:flex-row gap-8
+				xl:justify-start md:gap-24 xl:gap-20"
+				>
 					<div>
 						<p
 							className="text-[14px] font-barlowCondensed tracking-[2.35px]
@@ -53,7 +61,7 @@ export default function DestinationSection({ destinationData }) {
 						</p>
 						<p
 							className="text-white text-[28px] leading-[32px] uppercase
-        font-bellefair md:mt-3"
+        font-bellefair mt-3"
 						>
 							{selectedDestination.distance}
 						</p>
@@ -67,7 +75,7 @@ export default function DestinationSection({ destinationData }) {
 						</p>
 						<p
 							className="text-white text-[28px] leading-[32px] uppercase
-        font-bellefair md:mt-3"
+        font-bellefair mt-3 mb-14 md:mb-0"
 						>
 							{selectedDestination.travel}
 						</p>
