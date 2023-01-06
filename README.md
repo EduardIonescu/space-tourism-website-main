@@ -1,6 +1,6 @@
 ### Links
 
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   Live Site URL: [Click here to see webpage](https://your-live-site-url.com)
 
 # Frontend Mentor - Space tourism website solution
 
